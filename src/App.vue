@@ -29,11 +29,11 @@ import HamburgerIcon from './components/icons/HamburgerIcon.vue';
         <!-- Hero Section -->
         <section class="container mt-16 flex flex-col-reverse items-center md:flex-row md:justify-between md:mt-32 md:items-start" >
             <div class="flex flex-col space-y-6 items-center md:items-baseline" >
-                <h1 class="font-bold max-w-lg text-6xl text-secondary text-center leading-[60px] md:text-left">
+                <h1 class="font-bold sm:w-md max-w-lg text-6xl text-secondary text-center leading-[60px] md:text-left">
                     Bring everyone together
                     to build better products.
                 </h1>
-                <p class="text-2xl max-w-md text-center text-dark-grey md:text-left md:px-0" >
+                <p class="text-2xl sm:w-md max-w-md text-center text-dark-grey md:text-left md:px-0" >
                     Manage makes it simple for software teams to
                     plan day-to-day tasks while keeping the larger team
                     goals in view.
