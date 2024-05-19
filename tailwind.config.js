@@ -5,12 +5,6 @@ export default {
         "./src/**/*.{vue,js}",
       ],
   theme: {
-    screens: {
-        sm: '480px',
-        md: '768px',
-        lg: '976px',
-        xl: '1440px',
-      },
     extend: {
         colors: {
             "primary" : "#f25f3a",
@@ -18,6 +12,9 @@ export default {
             "dark-grey" : "#9095a7",
             "dark" : "#1d1e25",
             "light" : "#ffefeb",
+        },
+        fontFamily: {
+            "be-vietnam" : ["Be Vietnam Pro", "San Serif"]
         }
     },
   },

@@ -4,5 +4,5 @@ defineProps({
 })
 </script>
 <template>
-    <li class="text-sm" >{{ msg }}</li>
+    <li class="text-md text-secondary font-bold" >{{ msg }}</li>
 </template>
