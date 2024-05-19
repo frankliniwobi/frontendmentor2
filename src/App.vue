@@ -1,30 +1,28 @@
 <script setup>
+import PrimaryButton from './components/PrimaryButton.vue';
 import HelloWorld from './components/HelloWorld.vue'
+import NavItem from './components/NavItem.vue';
+import HamburgerIcon from './components/icons/HamburgerIcon.vue';
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
+    <main class="container max-w-[1440px] min-w-[375px] mx-auto" >
+        <nav class="flex justify-evenly items-center p-6">
+            <div>
+                <img src="/images/logo.svg" alt="logo">
+            </div>
+            <ul class="hidden md:flex space-x-2">
+                <NavItem msg="Pricing" />
+                <NavItem msg="About US" />
+                <NavItem msg="Careers" />
+                <NavItem msg="Community" />
+            </ul>
+            <PrimaryButton extra="hidden md:block" value="Get Started" />
+            <!-- Mobile View -->
+            <button>
+                <HamburgerIcon class="md:hidden" />
+            </button>
+        </nav>
+    </main>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
