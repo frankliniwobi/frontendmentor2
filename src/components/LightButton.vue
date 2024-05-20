@@ -11,7 +11,7 @@ defineProps({
     <button type="button"
     :class="[
         extra,
-        'text-white text-sm font-bold bg-primary text-nowrap p-2 transition-colors duration-300 rounded-full px-6 shadow-primary/50 shadow-md hover:shadow-lg hover:shadow-primary/60 hover:bg-primary/80'
+        'text-primary text-sm font-bold bg-white text-nowrap p-2 transition-colors duration-300 rounded-full px-6 shadow-primary/50 shadow-md hover:shadow-lg hover:shadow-primary/60 hover:bg-white/80 md:text-md '
     ]
     "
     >{{ value }}
