@@ -5,6 +5,7 @@ import NavItem from './components/NavItem.vue';
 import HamburgerIcon from './components/icons/HamburgerIcon.vue';
 import TrackItems from './components/TrackItems.vue';
 import LightButton from './components/LightButton.vue';
+import FooterLink from './components/FooterLink.vue';
 </script>
 
 <template>
@@ -104,13 +105,92 @@ import LightButton from './components/LightButton.vue';
     <!-- Testimonial Section -->
 
     <!-- Call-to-action Section -->
-    <section class="container mt-16 bg-primary w-full m-auto py-20 px-8 md:px-20 " >
+    <section class="container mt-16 bg-primary w-full mx-auto py-20 px-8 md:px-20 " >
         <div class="flex flex-col gap-6 justify-center items-center md:flex-row md:justify-between " >
-            <h3 class="text-white font-bold text-4xl text-center max-w-md md:text-left" >
+            <h3 class="text-white font-bold text-5xl sm:text-4xl text-center max-w-md md:text-left" >
                 Simplify how your team works today.
             </h3>
             <LightButton value="Get Started" />
         </div>
     </section>
     <!-- End Call-to-action Section -->
+
+    <!-- Footer Section -->
+    <footer class="container flex flex-col justify-center items-center gap-10 bg-dark w-full mx-auto py-16 px-8 md:hidden" >
+        <form class="flex justify-between items-center gap-2 flex-1" >
+            <input type="text" placeholder="Updates in your inbox.."
+                class="p-2 px-5 rounded-full"
+            />
+            <PrimaryButton extra="max-w-lg" value="GO" />
+        </form>
+
+        <div class="flex items-start w-full justify-between px-8 " >
+            <ul class=" space-y-3" >
+                <FooterLink value="Home" />
+                <FooterLink value="Pricing" />
+                <FooterLink value="Products" />
+                <FooterLink value="About US" />
+            </ul>
+            <ul class=" space-y-3">
+                <FooterLink value="Careers" />
+                <FooterLink value="Communities" />
+                <FooterLink value="Privacy Policy" />
+            </ul>
+        </div>
+
+        <div class="flex justify-between items-center gap-8 w-full" >
+            <img src="/images/icon-facebook.svg" alt="facebook">
+            <img src="/images/icon-youtube.svg" alt="youtube">
+            <img src="/images/icon-twitter.svg" alt="twitter">
+            <img src="/images/icon-pinterest.svg" alt="pinterest">
+            <img src="/images/icon-instagram.svg" alt="instagram">
+        </div>
+
+        <img src="/images/logo-white.svg" alt="logo">
+
+        <span class="text-xs text-white/70" >
+            Copyright 2020. All Rights Reserved
+        </span>
+    </footer>
+
+    <!-- Large Screens -->
+    <footer class="hidden container md:flex flex-row justify-around flex-1 items-stretch gap-10 bg-dark w-full mx-auto py-16 px-8" >
+        <div class="flex flex-col justify-center" >
+            <img src="/images/logo-white.svg" alt="logo">
+            <div class="flex justify-between items-center gap-4 mt-auto" >
+                <img src="/images/icon-facebook.svg" alt="facebook">
+                <img src="/images/icon-youtube.svg" alt="youtube">
+                <img src="/images/icon-twitter.svg" alt="twitter">
+                <img src="/images/icon-pinterest.svg" alt="pinterest">
+                <img src="/images/icon-instagram.svg" alt="instagram">
+            </div>
+        </div>
+
+        <div class="flex items-start justify-between space-x-32" >
+            <ul class=" space-y-3" >
+                <FooterLink value="Home" />
+                <FooterLink value="Pricing" />
+                <FooterLink value="Products" />
+                <FooterLink value="About US" />
+            </ul>
+            <ul class=" space-y-3">
+                <FooterLink value="Careers" />
+                <FooterLink value="Communities" />
+                <FooterLink value="Privacy Policy" />
+            </ul>
+        </div>
+
+        <div class="flex flex-col items-end p-0">
+            <form class="flex justify-between items-center gap-2" >
+                <input type="text" placeholder="Updates in your inbox.."
+                    class="p-2 px-5 rounded-full"
+                />
+                <PrimaryButton extra="max-w-lg" value="GO" />
+            </form>
+            <span class="text-xs text-white/70 mt-auto" >
+                Copyright 2020. All Rights Reserved
+            </span>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
 </template>
