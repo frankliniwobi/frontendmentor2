@@ -93,8 +93,14 @@ import TrackItems from './components/TrackItems.vue';
     <!-- Testimonial Section -->
     <section class="container mt-16 mx-auto space-y-16" >
         <h3 class="font-bold text-center text-secondary text-3xl" >What they've said</h3>
-        <div class="flex flex-nowrap gap-3 min-w-sm justify-center md:hidden" >
+        <div class="flex flex-col gap-6 min-w-sm justify-center items-center md:hidden" >
             <TestimonialItem />
+            <div class="flex gap-2 justify-center items-center" >
+                <button class="border-primary border-2 rounded-full w-2 h-2 bg-transparent text-white" ></button>
+                <button class="border-primary border-2 rounded-full w-2 h-2 bg-primary" ></button>
+                <button class="border-primary border-2 rounded-full w-2 h-2 bg-transparent" ></button>
+                <button class="border-primary border-2 rounded-full w-2 h-2 bg-transparent" ></button>
+            </div>
         </div>
         <div class="hidden md:flex flex-nowrap justify-between gap-3 min-w-sm" >
             <TestimonialItem />
