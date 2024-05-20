@@ -3,13 +3,26 @@ import PrimaryButton from './components/PrimaryButton.vue';
 import Testimonials from './components/Testimonials.vue';
 import NavItem from './components/NavItem.vue';
 import HamburgerIcon from './components/icons/HamburgerIcon.vue';
+import XIcon from './components/icons/XIcon.vue';
 import TrackItems from './components/TrackItems.vue';
+import MenuLinks from './components/MenuLinks.vue';
 import LightButton from './components/LightButton.vue';
 import FooterLink from './components/FooterLink.vue';
+import { ref } from 'vue';
+
+const modalOpen = ref(false);
+
+function open() {
+    modalOpen.value = true;
+};
+
+function close() {
+    modalOpen.value = false;
+};
 </script>
 
 <template>
-    <main class="container mx-auto py-16 px-6 mb:px-8 max-w-7xl">
+    <main  class="container mx-auto py-16 px-6 mb:px-8 max-w-7xl">
         <!-- Nav Section -->
         <nav class="container flex justify-between items-center mx-auto">
             <div>
@@ -24,11 +37,30 @@ import FooterLink from './components/FooterLink.vue';
             </ul>
             <PrimaryButton extra="hidden md:block" value="Get Started" />
             <!-- Mobile View -->
-            <button class="md:hidden" >
-                <HamburgerIcon />
-            </button>
+            <div class="md:hidden" >
+                <button type="button" v-if="! modalOpen" @click="open" >
+                    <HamburgerIcon />
+                </button>
+                <button type="button" v-if="modalOpen" @click="close" >
+                    <XIcon />
+                </button>
+            </div>
         </nav>
         <!-- End Nav Section -->
+
+        <!-- Overlay Menu -->
+        <Transition>
+            <div v-show="modalOpen" class="md:hidden">
+                <div class="absolute rounded-md flex flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-secondary sm:w-auto sm:self-center left-6 right-6 drop-shadow-lg">
+                    <MenuLinks value="Pricing" @click="close" />
+                    <MenuLinks value="Product" @click="close" />
+                    <MenuLinks value="About Us" @click="close" />
+                    <MenuLinks value="Careers" @click="close" />
+                    <MenuLinks value="Community" @click="close" />
+                </div>
+            </div>
+        </Transition>
+        <!-- End Overlay Menu -->
 
         <!-- Hero Section -->
         <section class="container mt-16 mx-auto flex flex-col-reverse items-center md:flex-row md:justify-between md:mt-32 md:items-start" >
@@ -105,7 +137,7 @@ import FooterLink from './components/FooterLink.vue';
     <!-- Testimonial Section -->
 
     <!-- Call-to-action Section -->
-    <section class="container mt-16 bg-primary w-full mx-auto py-20 px-8 md:px-20 " >
+    <section id="call-to-action" class="container mt-16 bg-primary w-full mx-auto py-20 px-8 md:px-20 " >
         <div class="flex flex-col gap-6 justify-center items-center md:flex-row md:justify-between " >
             <h3 class="text-white font-bold text-5xl sm:text-4xl text-center max-w-md md:text-left" >
                 Simplify how your team works today.
@@ -154,7 +186,7 @@ import FooterLink from './components/FooterLink.vue';
     </footer>
 
     <!-- Large Screens -->
-    <footer class="hidden container md:flex flex-row justify-around flex-1 items-stretch gap-10 bg-dark w-full mx-auto py-16 px-8" >
+    <footer class="hidden container md:flex flex-row justify-around items-stretch gap-10 bg-dark w-full mx-auto p-16" >
         <div class="flex flex-col justify-center" >
             <img src="/images/logo-white.svg" alt="logo">
             <div class="flex justify-between items-center gap-4 mt-auto" >
@@ -166,7 +198,7 @@ import FooterLink from './components/FooterLink.vue';
             </div>
         </div>
 
-        <div class="flex items-start justify-between space-x-32" >
+        <div class="flex items-start justify-between space-x-16" >
             <ul class=" space-y-3" >
                 <FooterLink value="Home" />
                 <FooterLink value="Pricing" />
@@ -194,3 +226,15 @@ import FooterLink from './components/FooterLink.vue';
     </footer>
     <!-- End Footer Section -->
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.8s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
